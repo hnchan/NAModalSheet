@@ -26,6 +26,8 @@
 		BED0083118413AFB00634561 /* SampleBottomSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BED0082F18413AFB00634561 /* SampleBottomSheetViewController.m */; };
 		BED0083218413AFB00634561 /* SampleBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED0083018413AFB00634561 /* SampleBottomSheetViewController.xib */; };
 		BED0083418413F3500634561 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED0083318413F3500634561 /* Accelerate.framework */; };
+		FA65BC0C1B54FBEA00D2748B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = FA65BC0B1B54FBEA00D2748B /* UIImage+ImageEffects.m */; };
+		FA65BC0F1B55035B00D2748B /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA65BC0E1B55035B00D2748B /* FXBlurView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,10 @@
 		BED0082F18413AFB00634561 /* SampleBottomSheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleBottomSheetViewController.m; sourceTree = "<group>"; };
 		BED0083018413AFB00634561 /* SampleBottomSheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleBottomSheetViewController.xib; sourceTree = "<group>"; };
 		BED0083318413F3500634561 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FA65BC0A1B54FBEA00D2748B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		FA65BC0B1B54FBEA00D2748B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		FA65BC0D1B55035B00D2748B /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		FA65BC0E1B55035B00D2748B /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +158,10 @@
 		BED00824184139DB00634561 /* NAModalSheet */ = {
 			isa = PBXGroup;
 			children = (
+				FA65BC0D1B55035B00D2748B /* FXBlurView.h */,
+				FA65BC0E1B55035B00D2748B /* FXBlurView.m */,
+				FA65BC0A1B54FBEA00D2748B /* UIImage+ImageEffects.h */,
+				FA65BC0B1B54FBEA00D2748B /* UIImage+ImageEffects.m */,
 				BED00825184139DB00634561 /* NAModalSheet.h */,
 				BED00826184139DB00634561 /* NAModalSheet.m */,
 				BED00827184139DB00634561 /* UIImage+BoxBlur.h */,
@@ -235,7 +245,9 @@
 				BED00822184139CC00634561 /* SampleSheetViewController.m in Sources */,
 				BED0082D184139DB00634561 /* UIImage+screenshot.m in Sources */,
 				BED008011841396200634561 /* ViewController.m in Sources */,
+				FA65BC0F1B55035B00D2748B /* FXBlurView.m in Sources */,
 				BED007FB1841396200634561 /* AppDelegate.m in Sources */,
+				FA65BC0C1B54FBEA00D2748B /* UIImage+ImageEffects.m in Sources */,
 				BE6B079119A4B8FA007A613F /* SampleTooltipViewController.m in Sources */,
 				BED007F71841396200634561 /* main.m in Sources */,
 				BED0082B184139DB00634561 /* NAModalSheet.m in Sources */,

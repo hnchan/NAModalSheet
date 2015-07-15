@@ -12,6 +12,9 @@
 #import "SampleTooltipViewController.h"
 #import "NAModalSheet.h"
 #import "UIImage+BoxBlur.h"
+#import "UIImage+screenshot.h"
+#import "UIImage+ImageEffects.h"
+#import "FXBlurView.h"
 
 @interface ViewController () <NAModalSheetDelegate, UITableViewDataSource, UITableViewDelegate>
 {
@@ -27,6 +30,8 @@
   
   NSMutableArray *_actions;
 }
+@property (nonatomic, strong) FXBlurView *blurView;
+
 @end
 
 // a container class for the demo actions presented in the main demo table
@@ -101,14 +106,23 @@
 {
   SampleSheetViewController *svc = [[SampleSheetViewController alloc] init];
   svc.opaque = disableBlurSwitch.on;
-  NAModalSheet *sheet = [[NAModalSheet alloc] initWithViewController:svc presentationStyle:NAModalSheetPresentationStyleSlideInFromUnderNavBar];
-  sheet.disableBlurredBackground = disableBlurSwitch.on;
-  sheet.delegate = self;
-  svc.modalSheet = sheet;
-  [sheet presentWithCompletion:^{
+    self.blurView=[[FXBlurView alloc] initWithFrame:self.view.frame];
+    self.blurView.dynamic = NO;
+    self.blurView.tintColor = [UIColor colorWithRed:0 green:0.5 blue:0.5 alpha:1];
     
-  }];
-}
+    [self.blurView updateAsynchronously:YES completion:^{
+        // self.blurView.frame = CGRectMake(0, 968, 320, 0);
+        [self.view addSubview:self.blurView];
+
+        NAModalSheet *sheet = [[NAModalSheet alloc] initWithViewController:svc presentationStyle:NAModalSheetPresentationStyleSlideInFromUnderNavBar];
+        sheet.disableBlurredBackground = disableBlurSwitch.on;
+        sheet.delegate = self;
+        svc.modalSheet = sheet;
+        [sheet presentWithCompletion:^{
+        }];
+    }];
+
+  }
 
 - (IBAction)presentFromBottom:(id)sender
 {
@@ -140,6 +154,7 @@
 - (IBAction)presentCustomFromTop:(id)sender
 {
   SampleSheetViewController *svc = [[SampleSheetViewController alloc] init];
+
   svc.opaque = disableBlurSwitch.on;
   NAModalSheet *sheet = [[NAModalSheet alloc] initWithViewController:svc presentationStyle:NAModalSheetPresentationStyleSlideInFromTop];
   sheet.disableBlurredBackground = disableBlurSwitch.on;
@@ -208,6 +223,7 @@
 -(void)modalSheetDismissed:(NAModalSheet *)sheet
 {
   tooltip = nil;
+    [self.blurView removeFromSuperview];
 }
 
 #pragma mark Table View

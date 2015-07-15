@@ -9,6 +9,7 @@
 #import "NAModalSheet.h"
 #import "UIImage+BoxBlur.h"
 #import "UIImage+screenshot.h"
+#import "UIImage+ImageEffects.h"
 
 #define kBlurParameter 0.6
 #define kViewAnimationDuration 0.4
@@ -325,6 +326,10 @@ static NSMutableArray *modalSheets = nil;
   backgroundTint.backgroundColor = self.backgroundTintColor;
   backgroundTint.alpha = 0.0;
   [mainView addSubview:backgroundTint];
+ 
+//    UIImage *image=[UIImage screenshot];
+//  UIImageView *view=[[UIImageView alloc] initWithImage:  [image applyDarkEffect]];
+//    [mainView addSubview:view];
   
   // This view contains the child view container. Any animated motion of the child container is clipped
   // to these bounds.
